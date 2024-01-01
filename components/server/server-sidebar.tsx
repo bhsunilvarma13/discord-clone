@@ -101,7 +101,7 @@ async function ServerSidebar({ serverId }: ServerSidebarProps) {
               },
               {
                 label: "Audio Channels",
-                type: "member",
+                type: "channel",
                 data: audioChannels?.map((channel) => ({
                   id: channel.id,
                   name: channel.name,
@@ -163,7 +163,12 @@ async function ServerSidebar({ serverId }: ServerSidebarProps) {
             />
             <div className="space-y-[2px]">
               {audioChannels.map((channel) => (
-                <ServerChannel key={channel.id} channel={channel} role={role} />
+                <ServerChannel
+                  key={channel.id}
+                  channel={channel}
+                  server={server}
+                  role={role}
+                />
               ))}
             </div>
           </div>
@@ -180,7 +185,12 @@ async function ServerSidebar({ serverId }: ServerSidebarProps) {
             />
             <div className="space-y-[2px]">
               {videoChannels.map((channel) => (
-                <ServerChannel key={channel.id} channel={channel} role={role} />
+                <ServerChannel
+                  key={channel.id}
+                  channel={channel}
+                  server={server}
+                  role={role}
+                />
               ))}
             </div>
           </div>
