@@ -11,9 +11,6 @@ interface MemberIdPageProps {
     memberId: string;
     serverId: string;
   };
-  searchParams: {
-    video?: boolean;
-  };
 }
 
 const MemberIdPage = async ({ params }: MemberIdPageProps) => {
